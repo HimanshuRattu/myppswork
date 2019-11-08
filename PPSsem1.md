@@ -5,89 +5,62 @@
 #### _Submitted To : Mr.Hardeep Singh Kang_
  
 ---
- ## 1. Write a Program to add two numbers.
+ ## 1. Write a Program to Print Hello friends.
 
 ```c
 #include<stdio.h>
 
 int main()
 {
-	int num1,num2,sum;
-	printf("Enter the first number : ");
-	scanf("%d",&num1);
-	printf("\nEnter the second number : ");
-	scanf("%d",&num2);
-	sum=num1+num2;
-	printf("\nSum of the two number is %d\n",sum);
+	printf("Hello Friend");
 	return 0;
 }
  ```
   
   #### Output : 
-    Enter the first number : 5
-    Enter the seconf number : 6
-    Sum of the two number is 11
+    Hello Friend
   ---  
- ## 2.Write a program to find average of n numbers.
+ ## 2.Write a program to print address.
 
 ```c
 #include<stdio.h>
   int main()
 {
-	float arr[20],avg,sum=0;
-	int N,i;
-	printf("\n How many numbers you want to enter : ");
-	scanf("%d",&N);
-	printf("\nEnter The Numbers : \n");
-	for(i=0;i<N;i++)
-	{
-		scanf("%f",&arr[i]);
-		sum+=arr[i];
-	}
-	printf("\n Average of the numbers is %3.f",sum/N);
-	return 0;
+	
+	printf("Welcome To GNDEC ,Gill Park,Ludhian,141006");
+	
+  return 0;
 }
 ```
 
 #### Output : 
-    How many numbers you want to enter : 5
-    Enter The Numbers : 1 2 3 4 5
-    Average of the numbers is 3.000
+    Welcome To GNDEC ,Gill Park,Ludhian,141006
 ---
- ## 3. Write a program to print Weekdays using switch statement.
+ ## 3. Write a program to Find sum of two numbers.
 
 ```c
 #include<stdio.h>
 int main()
 {
-	int week;
-	printf("\nEnter Week Number : ");
-	scanf("%d",&week);
-	switch(week){
-		case 1 : printf("\nMonday.");
-		break;
-		case 2 : printf("\nTuesday");
-		break;
-		case 3 : printf("\nWednesday");
-		break;
-		case 4 : printf("\nThursday");
-		break;
-		case 5 : printf("\nFriday");
-		break;
-		case 6 : printf("\nSaturday");
-		break;
-		case 7 : printf("\nSunday");
-		break;
-		default : printf("\nYou have entered wrong week number!");
-		break;
-	}
-	return 0;
+  int num1,num2,sum;
+    printf("Enter the first number : ");
+    scanf("%d",&num1);
+    
+    printf("\nEnter the second number : ");
+    scanf("%d",&num2);
+  
+    sum = num1 + num2;
+  
+    printf("\nSum of the two number is %d\n",sum);
+  
+    return 0;
 }
 ```
 
 ### Output : 
-    Enter Week number : 3
-    Wednesday
+    Enter the first number : 5
+    Enter the seconf number : 6
+    Sum of the two number is 11
 ---    
 ## 4. Write a program to find whether the number is even or odd.
 
@@ -95,18 +68,19 @@ int main()
 #include<stdio.h>
 int main()
 {
-	int num;
-	printf("\n Enter an Integer : ");
-	scanf("%d",&num);
-	if(num%2==0)
-	{
-		printf("\n The integer %d is Even.",num);
-	}
-	else
-	{
-		printf("\n The integer %d is Odd.",num);
-	}
-	return 0;
+  int num;
+    printf("\n Enter an Integer : ");
+    scanf("%d",&num);
+  
+  if(num % 2 == 0)
+  {
+    printf("\n The integer %d is Even.",num);
+  }
+  else
+  {
+    printf("\n The integer %d is Odd.",num);
+  }
+  return 0;
 }
 ```
 
@@ -114,17 +88,16 @@ int main()
     Enter an Integer : 5
     The integer 5 is Odd.
 ---
- ## 5. Write a program to print the table using for loop.
+ ## 5. Write a program to print the table of 5 using for loop.
 
 ```c
 #include<stdio.h>
 int main()
 {
- int i,num;
- printf("\nEnter the number for which\
-           you want the table : ");
- scanf("%d",&num);
- printf("\nTable of %d :-",num);
+ int i,num=5;
+
+    printf("\nTable of %d :-",num);
+ 
  for(i=1;i<=10;i++)
   {
     printf("\n%d X %d = %d",num,i,num*i);
@@ -134,47 +107,58 @@ int main()
 ``` 
 
 #### Output : 
-    Enter the number for which you want the table : 6
-    Table of 6 :-
-    6 X 1 = 6
-    6 X 2 = 12
-    6 X 3 = 18
-    6 X 4 = 24
-    6 X 5 = 30
-    6 X 6 = 36
-    6 X 7 = 42
-    6 X 8 = 48
-    6 X 9 = 54
-    6 X 10 = 60
+    Table of 5 :-
+    5 X 1 = 5
+    5 X 2 = 10 
+    5 X 3 = 15
+    5 X 4 = 20
+    5 X 5 = 25
+    5 X 6 = 30
+    5 X 7 = 35
+    5 X 8 = 40
+    5 X 9 = 45
+    5 X 10 = 50
  ---   
- ## 6. Write a program to check whether the number is armstrong or not.
+ ## 6. Write a program to convert into Celsius and Farenheit.
 
 ```c
 #include<stdio.h>
-int main( )
+
+int main()
 {
- int num,sum=0,digit;
- printf("Enter a Number : ");
- scanf("%d",&num);
- int temp=num;
- while(temp!=0)
+  float C,F;
+  int choice;
+  puts("What do you want to do ? ");
+  puts("1. Convert Celsius to Fahrenheit.");
+  puts("2. Convert Fahrenheit to Celsius.");
+  puts("Enter your choice : ");
+  scanf("%d",&choice);
+  switch(choice)
   {
-    digit=temp%10;
-    temp/=10;
-    sum+=(digit*digit*digit);
+    case 1 : printf("Enter Celsius : ");
+    scanf("%f",&C);
+    F=(C*1.8)+32;
+    printf("\n Fahrenheit : %.3f",F);
+    break;
+    case 2 : printf("Enter Fahrenheit : ");
+    scanf("%f",&F);
+    C=(F-32)/1.8;
+    printf("\n  : %.3f",C);
+    break;
   }
-if(sum==num)
-{
- printf("The number %d is an armstrong number.\n",num);
-}
-else
-  printf("The number %d is not an armstrong.\n",num);
-return 0;
+  return 0;
 }
 ```
 #### Output : 
-     Enter a Number : 371
-     The number 371 is an armstrong number.
+    What do you want to do ? 
+    1. Convert Celsius to Fahrenheit.
+    2. Convert Fahrenheit to Celsius.
+    Enter your choice : 1
+    Enter Celsius : 0
+
+    Fahrenheit : 32.000
+
+
 ---
 ## 7. Write a program to print Calculator using puts.
 
