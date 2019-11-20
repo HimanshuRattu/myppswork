@@ -1,8 +1,8 @@
 # **PPS ASSIGNMENT**
 ---
 
-#### _Submitted By : Himanshu Rattu_
-#### _Submitted To : Mr.Hardeep Singh Kang_
+### _Submitted By : Himanshu Rattu_
+### _Submitted To : Mr.Hardeep Singh Kang_
  
 ---
  ## 1. Write a Program to Print Hello friends.
@@ -160,116 +160,64 @@ int main()
 
 
 ---
-## 7. Write a program to print Calculator using puts.
+## 7. Write a program to print reverse of a number.
 
 ```C
 #include<stdio.h>
-void main()
-{
-puts(" ------------------ ");
-puts("|                  |");
-puts(" __________________ ");
-puts("|____|____|____|___|");
-puts("|____|____|____|___|");
-puts("|____|____|____|___|");
-puts("|____|____|____|___|");
-puts("|__________________|");
-}
-```
----
-## 8. Write a program for Bubble sort.
 
-```C
-#include <stdio.h>
- 
 int main()
 {
-  int array[100], n, c, d, swap;
- 
-  printf("Enter number of elements\n");
-  scanf("%d", &n);
- 
-  printf("Enter %d integers\n", n);
- 
-  for (c = 0; c < n; c++)
-    scanf("%d", &array[c]);
- 
-  for (c = 0 ; c < n - 1; c++)
-  {
-    for (d = 0 ; d < n - c - 1; d++)
+  int num,reverse=0,digit;
+    
+    printf("Enter an Integer(min. 2 digits) : ");
+    scanf("%d",&num);
+  
+  int temp=num;
+    while(temp>0)
     {
-      if (array[d] > array[d+1]) 
-      {
-        swap       = array[d];
-        array[d]   = array[d+1];
-        array[d+1] = swap;
-      }
+      digit=temp%10;
+      reverse=(reverse*10)+digit;
+      temp/=10;
     }
-  }
- 
-  printf("Sorted list in ascending order:\n");
- 
-  for (c = 0; c < n; c++)
-     printf("%d\n", array[c]);
- 
+    printf("\n Reverse of given Integer %d is %d.",num,reverse);
+  
   return 0;
 }
-```
-#### Output : 
-    Enter number of elements : 5
-    Enter 5 integers : 5 4 6 9 8 3
-    Sorted list in ascending order : 3 4 5 6 8 9
-___
 
-## 9. Write a program for Binary search.
+
+```
+###Output :
+    Enter an Integer(min. 2 digits) : 143
+
+    Reverse of given Integer 143 is 341.
+---
+## 8. Write a program for swapping of two numbers without using third variable.
 
 ```C
-#include <stdio.h>
+#include <stdio.h> 
+int main() 
+{ 
 
-int main()
-{
-   int c, first, last, middle, n, search, array[100];
+  int x, y;
+  printf("Enter Two Integers : ");
+  scanf("%d %d",&x,&y); 
 
-   printf("Enter number of elements\n");
-   scanf("%d",&n);
+  x = x + y; 
+  y = x - y; 
+  x = x - y; 
 
-   printf("Enter %d integers\n", n);
+  printf("After Swapping: x = %d, y = %d", x, y); 
 
-   for (c = 0; c < n; c++)
-      scanf("%d",&array[c]);
-
-   printf("Enter value to find\n");
-   scanf("%d", &search);
-
-   first = 0;
-   last = n - 1;
-   middle = (first+last)/2;
-
-   while (first <= last) {
-      if (array[middle] < search)
-         first = middle + 1;
-      else if (array[middle] == search) {
-         printf("%d found at location %d.\n", search, middle+1);
-         break;
-      }
-      else
-         last = middle - 1;
-
-      middle = (first + last)/2;
-   }
-   if (first > last)
-      printf("Not found! %d isn't present in the list.\n", search);
-
-   return 0;
-}
+  return 0; 
+} 
 ```
 #### Output : 
-      Enter number of elements : 4
-      Enter 4 integers : 5 2 7 6
-      Enter value to find : 6
-      6 is found at location 4
----
-## 10. Write a program to find factorial of a number : 
+    Enter Two Integers : 54
+    89
+    After Swapping: x = 89, y = 54
+___
+
+## 9. Write a program to find factorial of a number : 
 ```C
 #include <stdio.h>
  
@@ -285,8 +233,8 @@ int main()
    {
      if(Number%i == 0)
         {
-		 printf(" %d  ", i);
-		}
+     printf(" %d  ", i);
+    }
    }
  
   return 0;
@@ -295,37 +243,72 @@ int main()
 #### Output : 
     Enter any number to Find Factors : 3
     Factors of the Given Number are : 6
-    
 ---
-
-## 11. Write a program for fizzbuzz.
+## 10. Write a program to find fibonacci series : 
 ```C
 #include<stdio.h>
-
 int main()
 {
- for(int i=1;i<=30;i++)
-{
- if(i%3==0 && i%5==0)
-{
- printf("fizzBuzz\t");
+ int n,f=0,s=1,next,c;
+ printf("enter the no of terms \n");
+ scanf("%d",&n);
+ printf("first %d term of fibonacci series are: \n",n);
+ for(c=0;c<n;c++)
+ {
+  if(c<=1)
+   next=c;
+  else
+   {
+     next=f+s;
+     f=s;
+     s=next;
+   }
+  printf("%d \n",next);
+ }
+return 0;
 }
-else if(i%3==0)
+
+```
+#### Output : 
+    enter the no of terms 
+    5
+    first 5 term of fibonacci series are: 
+    0 
+    1 
+    1 
+    2 
+    3 
+   
+---
+
+## 11. Write a program check wheather a number is a palindrome .
+```C
+#include<stdio.h>
+int main()
 {
- printf("fizz\t");
-}
-else if(i%5==0)
-{
- printf("Buzz\t");
-}
-else{
-printf("%d\t",i);
-}
-}return 0;
+  int temp,number,sum ,digit;
+    printf("enter a no.");
+    scanf("%d",&number);
+  
+  temp=number;
+  
+    while(temp>0)
+    {
+    digit=temp%10;
+    temp/=10;
+    sum=sum*10+digit;
+    }
+  
+  if(number==sum)
+    printf("entered no. is palindrome");
+  else
+    printf("entered no. is palindorme");
+
+return 0;
 }
 ```
 #### Output : 
-      1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzBuzz
+     
 ---
 
 ## 12. Write a program to find sum of first 100 integers.
